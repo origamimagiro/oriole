@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <title>Oriole</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script TYPE="text/javascript" src="../js/svg.min.js"></script>
+    <script TYPE="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript"
+      src="../bootstrap/js/bootstrap.min.js"></script>
+    <script TYPE="text/javascript" src="hole.js"></script>
+    <style TYPE="text/css">
+      #warnings { background: white; color: red; padding: 1ex}
+      table { border-collapse: collapse; }
+      table, th, td { padding: 5px; border: 1px solid black; }
+      @media print {
+        .noprint { display: none; }
+        #conveyer { width: 100%; }
+      }
+      .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1><a href="./">Oriole</a></h1>
+        </div>
+        <div class="col-xs-6" style="text-align: right;">
+          <h4>by 
+            <a href="https://scripts.mit.edu/~jasonku/">Jason Ku</a>, 
+            2016
+          </h4>
+          <p style="font-size: 85%">
+            Research with 
+            <a href="http://erikdemaine.org/">Erik Demaine</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" id="warnings">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <svg id="flat" style="width: 100%;border: medium solid black;" class="noselect"></svg>
+        </div>
+        <div class="col-sm-6">
+          <svg id="fold" style="width: 100%;border: medium solid black;" class="noselect"></svg>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="text-align: center;">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-xs-6" style="height: 80pt; background-color: lightcyan">
+              <h5>Example Selection</h5>
+              <button id="TAB">Next [ &#x21E5 ]</button>
+            </div>
+            <div class="col-xs-6" style="height: 80pt; background-color: lavenderblush">
+              <h5>Toggle Show</h5>
+              <button id="KEY_T">Text[ t ]</button>
+              <button id="KEY_A">Auxiliary [ a ]</button>
+              <button id="KEY_S">Toggle Choice View [ s ]</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-xs-6" style="height: 80pt; background-color: lavender">
+              <h5>Select hole</h5>
+              <button id="DOWN">Prev [ &#x2193 ]</button>
+              <button id="UP">Next [ &#x2191 ]</button>
+              <button id="KEY_N">Neighbor [ n ]</button>
+            </div>
+            <div class="col-xs-6" style="height: 80pt; background-color: lightyellow">
+              <h5>3D Rotate [Mouse Drag]</h5>
+              <button id="KEY_H">Left [ h ]</button>
+              <button id="KEY_J">Down [ j ]</button>
+              <button id="KEY_K">Up [ k ]</button>
+              <button id="KEY_L">Right [ l ]</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-xs-6" style="height: 80pt; background-color: lightyellow">
+              <h5>Select vertex</h5>
+              <button id="LEFT">Prev [ &#x2190 ]</button>
+              <button id="RIGHT">Next [ &#x2192 ]</button>
+            </div>
+            <div class="col-xs-6" style="height: 80pt; background-color: lightcyan">
+              <h5>Select split choice</h5>
+              <button id="KEY_C">Toggle Parameter [ c ]</button>
+              <button id="COMMA">Prev [ , ]</button>
+              <button id="PERIOD">Next [ . ]</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" style="height: 80pt; background-color: lavenderblush">
+          <h5>Splitting</h5>
+          <button id="RETURN">Split [ &#x23CE ]</button>
+          <button id="DELETE">Delete [ &#x232B ]</button>
+          <button id="SPACE">Random/Clear [ &#x2423 ]</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6" style="height: 80pt; background-color: lavender">
+          <h5>Import OBJ</h5>
+          <input type="file" id="input" />
+        </div>
+        <div class="col-xs-6" style="height: 80pt; background-color: lightcyan">
+          <h5>Export OBJ</h5>
+          <button id="create">Create File</button> 
+          <a download="example.obj" id="viewlink" style="display: none">View</a>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
